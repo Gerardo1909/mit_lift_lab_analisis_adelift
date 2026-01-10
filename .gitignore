@@ -9,3 +9,40 @@ wheels/
 # Virtual environments
 .venv
 uv.lock
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+
+# LaTeX build artifacts (keep .tex/.bib/.png under version control)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+*.ps
+_minted*
+
+main.fff
+main.bbl-SAVE-ERROR
+
+# If you prefer NOT to commit generated PDFs, uncomment:
+# *.pdf
