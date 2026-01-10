@@ -1,0 +1,23 @@
+El análisis se basa en el relevamiento del MIT LIFT Lab, que utiliza instrumentos de encuesta para capturar indicadores operativos y percepciones de micro y pequeños negocios, combinando variables cuantitativas con preguntas cualitativas \parencite{mitlift}.
+
+En particular, se trabaja con 923 respuestas correspondientes al periodo bajo estudio (octubre de 2025). El instrumento de encuesta releva, entre otros aspectos:
+
+\begin{itemize}
+  \item La percepción del comerciante sobre cómo evolucionaron sus ventas respecto del mes previo.
+  \item La expectativa de ventas en un horizonte de hasta 3 meses desde el momento en que se tomó la encuesta.
+  \item Preguntas abiertas donde los encuestados explican, en sus propias palabras, las razones detrás de cambios en ventas y otras decisiones.
+  \item Señales operativas complementarias (por ejemplo, precios e inventario) y características generales del negocio.
+\end{itemize}
+
+La estrategia analítica es descriptiva: se reportan distribuciones (gráficos de barras) y se analizan respuestas abiertas mediante técnicas simples de normalización de texto y frecuencia de términos (nubes de palabras). Este enfoque se alinea con el carácter exploratorio de un informe educativo y con la necesidad de interpretar el contexto sin sobre-extender conclusiones causales.
+
+\subsection{Preparación de datos}
+
+El proceso de limpieza inicial tuvo como objetivo mejorar consistencia y comparabilidad entre respuestas. Dado el foco de este informe (expectativas, percepciones y texto), se priorizaron las siguientes acciones:
+
+\begin{itemize}
+  \item Depuración de metadatos del instrumento: se removieron columnas técnicas de plataforma (por ejemplo, identificadores y marcas temporales) que no aportan al análisis.
+  \item Normalización de variables de texto: se estandarizaron acentos y caracteres especiales, y se homogeneizaron respuestas cortas para evitar fragmentación artificial en el análisis de frecuencia.
+  \item Parseo de variables numéricas con respuestas mixtas: se definieron reglas para separar o convertir entradas donde el encuestado combinó texto y números en una misma celda.
+  \item Tratamiento conservador de outliers evidentes: cuando un valor extremo luce incompatible con la escala típica de la variable, se lo trató como faltante para el análisis descriptivo.
+\end{itemize}

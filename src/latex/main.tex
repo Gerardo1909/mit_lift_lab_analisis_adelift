@@ -1,0 +1,56 @@
+% Compilar con: latexmk -pdf main.tex
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage[protrusion=true,expansion=false]{microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[hidelinks]{hyperref}
+
+% Bibliografía (autor-año, no APA)
+\usepackage[
+  backend=biber,
+  style=authoryear,
+  sortcites=true,
+  natbib=true
+]{biblatex}
+\addbibresource{references.bib}
+
+% Las figuras viven en ../viz (respecto a src/latex)
+\graphicspath{{../viz/}}
+
+\csname title\endcsname{Shocks coyunturales y dinámicas estacionales: evidencia de octubre de 2025 sobre expectativas y percepciones en nanostores de Argentina}
+\author{Gerardo Toboso\\Universidad Nacional de San Mart\'in \and Facundo Latini\\Universidad Nacional de San Mart\'in}
+\date{Enero de 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Los micro y pequeños negocios, incluidos los nanostores, cumplen un rol central en el abastecimiento cotidiano de los barrios y en el empleo en América Latina. En Argentina, operan bajo alta volatilidad macroeconómica y enfrentan shocks de corto plazo que alteran el consumo y la toma de decisiones. Este informe analiza cómo conviven estímulos estacionales asociados a fechas comerciales e incertidumbre coyuntural en las percepciones y expectativas de ventas de nanostores. Se utilizan datos de encuestas del MIT Low-Income Firms Transformation (LIFT) Lab, combinando análisis descriptivo con análisis exploratorio de texto sobre respuestas abiertas. El objetivo no es probar causalidad, sino documentar patrones consistentes en una ventana temporal específica y proponer métricas operativas para profundizar el análisis.
+\end{abstract}
+
+\noindent\textbf{Palabras clave:} nanostores, nanocomercios, expectativas, Argentina, shocks, MIT LIFT.
+
+\section{Introducción}
+\input{sections/01_introduccion.tex}
+
+\section{Datos y metodología}
+\input{sections/02_datos_y_metodologia.tex}
+
+\section{Resultados}
+\input{sections/03_resultados.tex}
+
+\section{Conclusiones}
+\input{sections/04_conclusiones.tex}
+
+\printbibliography[title={Referencias}]
+
+\end{document}
