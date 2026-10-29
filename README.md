@@ -2,16 +2,15 @@
 
 ## Descripción
 
-Este repositorio contiene el análisis de datos del proyecto MIT LIFT LAB para Argentina (Fall 2025), enfocado en evaluar el índice de digitalización y desempeño de pequeñas y medianas empresas. El proyecto es parte de la iniciativa MIT LIFT LAB del MIT Sloan School of Management, que trabaja en la transformación digital de empresas en mercados emergentes.
+Este repositorio contiene el análisis de datos del proyecto MIT LIFT LAB para Argentina (Fall 2025), enfocado en el relevamiento de 923 nanostores (pequeños comercios de cercanía) realizado entre el 29/09 y el 28/10/2025. Corresponde a la primera etapa del trabajo: limpieza de los datos, análisis exploratorio e informe descriptivo.
 
 ## Estructura del Proyecto
 
 ```
-mit_analisis/
+mit_lift_lab_analisis_adelift/
 ├── src/
-│   ├── borrador_trabajo.md   # Borrador del informe en Markdown
 │   ├── data/
-│   │   ├── raw/              # Datos originales de encuestas Qualtrics
+│   │   ├── raw/              # Datos originales de Qualtrics (no incluidos en el material entregado)
 │   │   └── processed/        # Datos limpios y procesados
 │   ├── notebooks/
 │       ├── 0_initial_cleaning.ipynb    # Limpieza inicial de datos
@@ -46,8 +45,8 @@ El conjunto de datos contiene registros de negocios encuestados en Argentina.
 - Eliminación de columnas de metadata técnica de Qualtrics
 - Renombrado de columnas para reducir complejidad
 - Generación de dos versiones del dataset:
-  - `clean_survey_full.csv`: incluye información de identificación para cruce de datos
-  - `clean_survey_to_analyze.csv`: versión reducida para análisis
+  - `clean_survey_full.csv`: incluye información de identificación para cruce de datos (no incluido en el material entregado)
+  - `clean_survey_to_analyze.csv`: versión reducida para análisis. En el material entregado viaja sin latitud ni longitud, que identifican al comercio; en su lugar trae la zona geográfica ya calculada (`zona_dbscan`), por lo que las celdas de mapas de `1_EDA.ipynb` no se pueden reejecutar sobre él.
 
 ### 2. Análisis Exploratorio (1_EDA.ipynb)
 
@@ -95,13 +94,12 @@ Para compilar el informe en PDF se requiere una distribución LaTeX (por ejemplo
 
 ## Uso
 
-1. Clonar el repositorio
-2. Instalar dependencias
-3. Ejecutar los notebooks en orden secuencial:
+1. Instalar dependencias
+2. Ejecutar los notebooks en orden secuencial:
   - Primero `0_initial_cleaning.ipynb` para procesar los datos
   - Luego `1_EDA.ipynb` para análisis exploratorio
   - Luego `2_analisis_estacionalidad.ipynb` para regenerar las figuras del informe (exporta PNGs a `src/viz/`)
-4. (Opcional) Compilar el informe en PDF (desde `src/latex/`):
+3. (Opcional) Compilar el informe en PDF (desde `src/latex/`):
 
 ```bash
 latexmk -pdf -interaction=nonstopmode main.tex
@@ -111,7 +109,7 @@ latexmk -pdf -interaction=nonstopmode main.tex
 
 Los análisis generan insights sobre:
 
-- Patrones de adopción digital en PyMEs argentinas
+- Patrones de adopción digital en nanostores argentinos
 - Relación entre digitalización y desempeño empresarial
 - Distribución geográfica de negocios y características
 - Segmentación de negocios según perfiles digitales
@@ -125,8 +123,7 @@ Además, el repositorio incluye artefactos de salida para el informe:
 - Informe en LaTeX y PDF en `src/latex/`:
   - `main.tex` (fuente)
   - `main.pdf` (salida)
-- Borrador del informe en Markdown: `src/borrador_trabajo.md`
 
 ## Contacto
 
-Proyecto desarrollado como parte de la iniciativa MIT LIFT LAB del MIT Sloan School of Management.
+Proyecto desarrollado en el marco del MIT LIFT Lab (MIT Center for Transportation and Logistics), en articulación con la Escuela de Economía y Negocios de la UNSAM.
